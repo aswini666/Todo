@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<h2 class="todo_list_title"><%= @todolist.title %></h2>
+<p class="todo_list_sub_title"><%= @todolist.description %></p>
+
+<div id="todo_items_wrapper">
+  <%= render @todolist.todoitems %>
+  <div id="form">
+    <%= render "todoitems/form" %>
+  </div>
+</div>

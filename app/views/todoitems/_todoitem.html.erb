@@ -1,0 +1,31 @@
+<div class="row clearfix">
+  <% if todoitem.completed? %>
+    <div class="complete">
+      <%= link_to complete_todolist_todoitem_path(@todolist, todoitem.id), method: :patch do %>
+        <i style="opacity: 0.4;" class="fa fa-check"></i>
+      <% end %>
+    </div>
+    <div class="todo_item">
+      <p style="opacity: 0.4;"><strike><%= todoitem.content %></strike></p>
+    </div>
+    <div class="trash">
+      <%= link_to todolist_todoitem_path(@todolist, todoitem.id), method: :delete, data: { confirm: "Are you sure?" } do %>
+        <i class="fa fa-trash"></i>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="complete">
+      <%= link_to complete_todolist_todoitem_path(@todolist, todoitem.id), method: :patch do %>
+        <i class="fa fa-check"></i>
+      <% end %>
+    </div>
+    <div class="todo_item">
+      <p><%= todoitem.content %></p>
+    </div>
+    <div class="trash">
+      <%= link_to todolist_todoitem_path(@todolist, todoitem.id), method: :delete, data: { confirm: "Are you sure?" } do %>
+        <i class="fa fa-trash"></i>
+      <% end %>
+    </div>
+  <% end %>
+</div>
